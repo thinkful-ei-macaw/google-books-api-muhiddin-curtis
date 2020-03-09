@@ -18,8 +18,3 @@ h1 {
   background-color:lightgray;
   padding: 10px;
 }
-
-.book-type, .print-type {
-  display: inline;
-  margin-right: 10px;
-}

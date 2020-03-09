@@ -10,28 +10,23 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      searchTerm: '',
-      books: {
-         items: []
-      }
+      searchTerm: ''
     }
+    // this.setState({
+    //   searchTerm: 
+    // })
   }
 
     onSubmit = (event) => {
     event.preventDefault();
-    let searchTerm = event.target.search.value;
-    this.setState({
-      searchTerm: searchTerm
-    }, () => this.fetchBooks())
-    }
+    const searchTerm = event.target.search.value;
+    
+  }
 
 
-
- fetchBooks() {
-  const url = `https://www.googleapis.com/books/v1/volumes?q={${this.state.searchTerm}}`;
-    fetch(url)
+componentDidMount() {
+    fetch('https://www.googleapis.com/books/v1/volumes?q={computers}')
     .then(response => {
-      console.log(url);
       if(!response.ok) {
         throw new Error ('Something went wrong');
       }
@@ -39,9 +34,8 @@ class App extends Component {
     })
   .then(response=> response.json())
   .then(data => {
-    console.log(data);
     this.setState({
-      books: data
+      
     })
   })
   .catch(error => {
@@ -49,16 +43,16 @@ class App extends Component {
       error: error.message
   });
 });
-}
+
 
   render() {
-    console.log('im render');
     return (
       <div className="App">
-        <Header />
-        <Search onSubmit={this.onSubmit}/>
-        <Filter />
-        <BookList books={this.state.books.items}/>
+      <Header />
+      <Search onSubmit={this.onSubmit}/>
+      <Filter />
+      <BookList/>
+
       </div>
     );
   }

@@ -15,11 +15,5 @@ h1 {
 }
 
 .filter-bars {
-  background-color:lightgray;
-  padding: 10px;
-}
-
-.book-type, .print-type {
-  display: inline;
-  margin-right: 10px;
+  
 }

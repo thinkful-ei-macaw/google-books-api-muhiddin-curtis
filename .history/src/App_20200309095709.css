@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+header {
+  background-color:  black;
+  height: 100px;
+}
+h1 {
+  color: white;
+}
+.formSearch {
+  background-color: gray;
+}

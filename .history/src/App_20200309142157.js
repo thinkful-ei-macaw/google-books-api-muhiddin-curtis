@@ -14,7 +14,11 @@ class App extends Component {
       books: {
          items: []
       }
+     
     }
+    // this.setState({
+    //   searchTerm: 
+    // })
   }
 
     onSubmit = (event) => {
@@ -28,6 +32,8 @@ class App extends Component {
 
 
  fetchBooks() {
+  console.log('im mount');
+  console.log(this.state.searchTerm);
   const url = `https://www.googleapis.com/books/v1/volumes?q={${this.state.searchTerm}}`;
     fetch(url)
     .then(response => {

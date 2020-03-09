@@ -14,20 +14,25 @@ class App extends Component {
       books: {
          items: []
       }
+     
     }
+    // this.setState({
+    //   searchTerm: 
+    // })
   }
 
     onSubmit = (event) => {
     event.preventDefault();
-    let searchTerm = event.target.search.value;
+    const search = this.props.search.value;
     this.setState({
-      searchTerm: searchTerm
-    }, () => this.fetchBooks())
+      searchTerm: search
+    })
+    console.log(searchTerm);
     }
 
 
-
- fetchBooks() {
+componentDidMount() {
+  console.log(this.state.searchTerm);
   const url = `https://www.googleapis.com/books/v1/volumes?q={${this.state.searchTerm}}`;
     fetch(url)
     .then(response => {
@@ -52,7 +57,6 @@ class App extends Component {
 }
 
   render() {
-    console.log('im render');
     return (
       <div className="App">
         <Header />
