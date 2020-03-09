@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+.description {
+  text-align: left;
+  text-indent: 30px;
+}
 
 header {
   background-color:  black;
@@ -22,4 +26,12 @@ h1 {
 .book-type, .print-type {
   display: inline;
   margin-right: 10px;
+}
+
+select {
+  padding: 3px;
+}
+
+.bookList {
+  padding: 0 20%;
 }
